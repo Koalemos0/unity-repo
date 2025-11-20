@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float wallRunSpeed;
     public float dashSpeed;
     public float dashSpeedChangeFactor;
+    public float swingSpeed;
 
     public float maxYSpeed;
 
@@ -78,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     public enum MovementState
     {
         walking,
+        swinging,
         sprinting,
         wallrunning,
         crouching,
@@ -89,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
     public bool sliding;
     public bool wallrunning;
     public bool dashing;
+    public bool swinging;
 
     private void Start()
     {
@@ -152,8 +155,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
+        if (swinging)
+        {
+            state = MovementState.swinging;
+            desiredMoveSpeed = swingSpeed;
+        }
         // Mode - Dashing
-        if (dashing)
+        else if (dashing)
         {
             state = MovementState.dashing;
             desiredMoveSpeed = dashSpeed;
