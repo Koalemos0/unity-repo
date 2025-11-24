@@ -96,4 +96,9 @@ public class Grappling : MonoBehaviour
         lr.enabled = false;
     }
 
+    public void DisableLineRenderer()
+    {
+        lr.enabled = false;
+    }
+
 }

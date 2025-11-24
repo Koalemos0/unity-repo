@@ -83,6 +83,8 @@ public class Dashing : MonoBehaviour
 
         Invoke(nameof(DelayedDashForce), 0.025f);
 
+        GetComponent<Grappling>().DisableLineRenderer();
+
         Invoke(nameof(ResetDash), dashDuration);
     }
 
@@ -102,7 +104,7 @@ public class Dashing : MonoBehaviour
     {
         pm.dashing = false;
         pm.maxYSpeed = 0f;
-
+        
         cam.DoFov(pm.startFov, 0.2f);
 
         if (disableGravity) 

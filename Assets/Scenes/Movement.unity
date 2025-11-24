@@ -10026,6 +10026,11 @@ PrefabInstance:
       propertyPath: field of view
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4648473548599007942, guid: 01222bd566d30074e8d52b3d390a4c1d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5091000811293864137, guid: 01222bd566d30074e8d52b3d390a4c1d,
         type: 3}
       propertyPath: overshootYAxis
